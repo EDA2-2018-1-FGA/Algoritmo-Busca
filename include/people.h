@@ -11,6 +11,7 @@ class People{
     double height;
 
   public:
+    People(){}
     People(std::string name, int weight, double height): name(name),
                                                          weight(weight),
                                                          height(height){}
