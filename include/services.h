@@ -6,6 +6,7 @@
 class Services{
   public:
     People* generate(int lenght);
+    void print_peoples(People peoples[], int length);
 };
 
 
