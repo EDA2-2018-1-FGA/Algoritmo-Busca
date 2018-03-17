@@ -5,7 +5,10 @@
 
 class Services{
   public:
-    People* generate(int lenght);
+    People* generate(int length);
+    int generate_height();
+    double generate_weight();
+    std::string generate_name();
     void print_peoples(People peoples[], int length);
 };
 
