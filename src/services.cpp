@@ -53,8 +53,8 @@ Services::generate_weight(){
 
 std::string
 Services::generate_name(){
-  const int name_random_index = rand() % 70;
-  const int surname_random_index = rand() % 80;
+  const int name_random_index = rand() % 71;
+  const int surname_random_index = rand() % 81;
   const std::string name = name_list[name_random_index] + " " + surname_list[surname_random_index];
   return name;
 }
@@ -71,10 +71,32 @@ Services::print_peoples(People peoples[], const int length){
 
 void
 Services::print_peoples(People peoples[], const int length, const int* idx){
-  std::cout << std::setw(22) << "Name" << " | " << std::setw(5) <<"Weight(Kg)" << " | " << std::setw(5) << "Height(cm)" << std::endl;
+  std::cout << "  ID   |"<< std::setw(22) << "Name" << " | " << std::setw(5) <<"Weight(Kg)" << " | " << std::setw(5) << "Height(cm)" << std::endl;
   for(int i = 0; i < length; i++){
+      std::cout << std::setw(5) << i << "  | ";
       std::cout << std::setw(21) << peoples[idx[i]].get_name() << "  | ";
       std::cout << std::setw(10) << peoples[idx[i]].get_weight() << " | ";
       std::cout << std::setw(5) << peoples[idx[i]].get_height() << std::endl;
+  }
+}
+
+void
+Services::print_peoples_g(People peoples[], const int length, const int* ordened, const int* idx){
+
+  for(int i = 0, j = 0; i < length; i++){
+
+    if(idx[j] == i){
+      std::cout << "Letra " << (char)('A' + j) << ": " << idx[j] << std::endl;
+      j++;
+    }else if(idx[j] == INT_MAX){
+      std::cout << "Letra " << (char)('A' + j) << ": " << idx[j] << std::endl;
+      j++;
+      continue;
+    }
+
+    std::cout << std::setw(5) << i << "  | ";
+    std::cout << std::setw(21) << peoples[ordened[i]].get_name() << "  | ";
+    std::cout << std::setw(10) << peoples[ordened[i]].get_weight() << " | ";
+    std::cout << std::setw(5) <<  peoples[ordened[i]].get_height() << std::endl;
   }
 }

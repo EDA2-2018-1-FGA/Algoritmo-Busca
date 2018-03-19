@@ -3,11 +3,15 @@
 #include "services.h"
 #include "kindex.h"
 
+#define LENGTH 100
+
 int main(){
-  People* xxx = Services::generate(100);
-  Services::print_peoples(xxx, 100);
-  Kindex* k = new Kindex(xxx, 100);
-  Services::print_peoples(xxx, 100, k->get_ordened());
+  srand(time(NULL));
+  People* xxx = Services::generate(LENGTH);
+  Services::print_peoples(xxx, LENGTH);
+  Kindex* k = new Kindex(xxx, LENGTH);
+  Services::print_peoples(xxx, LENGTH, k->get_ordened());
+  Services::print_peoples_g(xxx, LENGTH, k->get_ordened(), k->get_index());
 
   return 0;
 }

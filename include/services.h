@@ -12,6 +12,7 @@ class Services{
     static std::string generate_name();
     static void print_peoples(People peoples[], const int length);
     static void print_peoples(People peoples[], const int length, const int *idx);
+    static void print_peoples_g(People peoples[], const int length, const int *ordened, const int *idx);
 };
 
 
