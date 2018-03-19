@@ -4,10 +4,21 @@
 Kindex::Kindex(People* people, const int size){
   this->ordened = new int[size];
   /* copy index to ordened vector */ 
-  for(int i = 0; i < size; i++)
+  for(int i = 0; i < size; i++){
     this->ordened[i] = i;
+  }
+
+  for(int i = 0; i < 26; i++){
+    this->kindex[i][0] = 'A' + i;
+    this->kindex[i][1] = -1;
+  }
 
   /*shell sort*/
+  this->shell_sort(people, size);
+}
+
+void
+Kindex::shell_sort(People* people, const int size){
   int mid = size / 2;
   int aux_idx, current;
   
@@ -24,8 +35,8 @@ Kindex::Kindex(People* people, const int size){
     }
     mid /= 2;
   }
-}
 
+}
 
 int* 
 Kindex::get_ordened(){

@@ -8,6 +8,8 @@ class Kindex{
   private:
     int* ordened;
     int** kindex;
+    
+    void shell_sort(People *people, const int size);
 
   public:
     Kindex(People *people, const int size);
