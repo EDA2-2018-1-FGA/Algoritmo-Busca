@@ -10,7 +10,7 @@ Kindex::Kindex(People* people, const int size){
 
   for(int i = 0; i < 26; i++){
     this->kindex[i][0] = 'A' + i;
-    this->kindex[i][1] = -1;
+    this->kindex[i][1] = INT_MAX;
   }
 
   /*shell sort*/

@@ -7,7 +7,7 @@
 class Kindex{
   private:
     int* ordened;
-    int** kindex;
+    int kindex[26][2];
     
     void shell_sort(People *people, const int size);
 
@@ -16,7 +16,7 @@ class Kindex{
     int* get_ordened();
 
     //int find(const std::string name);
-};
 
+};
 
 #endif
