@@ -52,6 +52,32 @@ Kindex::shell_sort(People *people, const int size){
 
 }
 
+
+int 
+Kindex::find(const std::string name, People *people, const int size){
+  int id = -1;
+  int start = this->kindex[name[0] - 'A']; 
+  int end;
+
+  if(start == INT_MAX){
+    return id;
+  }
+
+  if(name[0] == 'Z'){
+    end = size;
+  } else {
+    end = this->kindex[name[0] - 'A' + 1];
+  }
+
+  for(int i = start; i < end; i++){
+    if(name == people[ordened[i]].get_name()){
+      return ordened[i];
+    }
+  }
+
+  return id;
+}
+
 int* 
 Kindex::get_ordened(){
   return this->ordened;

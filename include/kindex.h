@@ -17,7 +17,7 @@ class Kindex{
     int* get_ordened();
     int* get_index();
 
-    int find(const std::string name);
+    int find(const std::string name, People *people, const int size);
 
 };
 

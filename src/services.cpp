@@ -61,8 +61,9 @@ Services::generate_name(){
 
 void
 Services::print_peoples(People peoples[], const int length){
-  std::cout << std::setw(22) << "Name" << " | " << std::setw(5) <<"Weight(Kg)" << " | " << std::setw(5) << "Height(cm)" << std::endl;
+  std::cout << "  ID   |" << std::setw(22) << "Name" << " | " << std::setw(5) <<"Weight(Kg)" << " | " << std::setw(5) << "Height(cm)" << std::endl;
   for(int i = 0; i < length; i++){
+      std::cout << std::setw(5) << i << "  | ";
       std::cout << std::setw(21) << peoples[i].get_name() << "  | ";
       std::cout << std::setw(10) << peoples[i].get_weight() << " | ";
       std::cout << std::setw(5) << peoples[i].get_height() << std::endl;
