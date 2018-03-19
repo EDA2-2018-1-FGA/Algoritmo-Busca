@@ -2,17 +2,17 @@
 #include "people.h"
 
 void 
-People::set_name(std::string name){
+People::set_name(const std::string name){
   this->name = name;
 }
 
 void  
-People::set_weight(int weight){
+People::set_weight(const int weight){
   this->weight = weight;
 }
 
 void  
-People::set_height(double height){
+People::set_height(const double height){
   this->height = height;
 }
 

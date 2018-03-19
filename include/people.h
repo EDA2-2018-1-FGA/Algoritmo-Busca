@@ -12,15 +12,17 @@ class People{
 
   public:
     People(){}
-    People(std::string name, int weight, double height): name(name),
-                                                         weight(weight),
-                                                         height(height){}
+    People(const std::string name, 
+           const int weight, 
+           const double height): name(name),
+                                 weight(weight),
+                                 height(height){}
 
-    void set_name(std::string name);
+    void set_name(const std::string name);
 
-    void set_weight(int weight);
+    void set_weight(const int weight);
 
-    void set_height(double height);
+    void set_height(const double height);
 
     std::string get_name();
 
