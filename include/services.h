@@ -4,12 +4,14 @@
 #include "people.h"
 
 class Services{
+  private:
   public:
-    People* generate(int length);
-    int generate_height();
-    double generate_weight();
-    std::string generate_name();
-    void print_peoples(People peoples[], int length);
+    static People* generate(const int length);
+    static int generate_height();
+    static double generate_weight();
+    static std::string generate_name();
+    static void print_peoples(People peoples[], const int length);
+    static void print_peoples(People peoples[], const int length, const int *idx);
 };
 
 
