@@ -1,3 +1,4 @@
+#include <chrono>
 #include "services.h"
 
 const std::string name_list[71] = {"André","Adriana","Adriano","Alisson","Bruno","Bruna",
@@ -26,12 +27,15 @@ const std::string surname_list[81] = { "Alves","Abreu","Almeida","Amorim","Arauj
 
 People*
 Services::generate(const int length){
+  auto begin_timer = std::chrono::high_resolution_clock::now();
   People* peoples = new People[length];
   for(int i = 0; i < length; i++){
     peoples[i].set_name(Services::generate_name());
     peoples[i].set_height(Services::generate_height());
     peoples[i].set_weight(Services::generate_weight());
   }
+  auto end_timer = std::chrono::high_resolution_clock::now();
+  std::cout << "Peoples generating time: " <<  std::chrono::duration_cast<std::chrono::nanoseconds>(end_timer-begin_timer).count() << "ns" << std::endl;
   return peoples;
 }
 
@@ -100,4 +104,14 @@ Services::print_peoples_g(People peoples[], const int length, const int* ordened
     std::cout << std::setw(10) << peoples[ordened[i]].get_weight() << " | ";
     std::cout << std::setw(5) <<  peoples[ordened[i]].get_height() << std::endl;
   }
+}
+
+int
+Services::sequential_search(People peoples[], const int length, const std::string name){
+  for(int i = 0; i < length; i++){
+    if(name == peoples[i].get_name()){
+      return i;
+    }
+  }
+  return -1;
 }
